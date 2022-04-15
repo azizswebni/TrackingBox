@@ -6,7 +6,7 @@
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //code1
-SoftwareSerial mySerial(16, 17);
+/*SoftwareSerial mySerial(16, 17);
 //#define mySerial Serial
 COBD obd;
 bool hasMEMS;
@@ -156,7 +156,7 @@ void loop()
   if (hasMEMS) {
     readMEMS();
   }
-}
+}*/
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -181,8 +181,8 @@ uint32_t rpm = 0;
 void setup()
 {
   Serial.begin(115200);
-  mySerial.begin(38400);
-  if(!myELM327.begin(mySerial, true, 2000,ISO_15765_11_BIT_250_KBAUD))
+  mySerial.begin(115200);
+  if(!myELM327.begin(mySerial, true, 2000,ISO_15765_11_BIT_500_KBAUD))
   {
     Serial.println("Couldn't connect to OBD scanner");
     while (1);
